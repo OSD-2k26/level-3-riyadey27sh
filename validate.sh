@@ -5,7 +5,7 @@ echo "🔄 Fetching all branches..."
 git fetch --all --quiet
 
 # Create local branches for all remotes (CI fix)
-for r in $(git branch -r | grep -v '->'); do
+for r in $(git branch -r | grep -v '>'); do
   git branch --track "${r#origin/}" "$r" 2>/dev/null || true
 done
 
